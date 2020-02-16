@@ -1,0 +1,6 @@
+lz4
+zlib
+cmake-build-debug
+bin
+boot
+.idea
