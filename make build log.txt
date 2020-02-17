@@ -1,0 +1,721 @@
+lhtin@mrtime ~/P/ChezScheme> make build
+
+(cd a6osx && /Library/Developer/CommandLineTools/usr/bin/make build)
+
+// 编译c目录
+(cd c && /Library/Developer/CommandLineTools/usr/bin/make)
+ln -s ../../c/statics.c statics.c
+ln -s ../../c/system.h system.h
+ln -s ../../c/types.h types.h
+ln -s ../../c/version.h version.h
+ln -s ../../c/externs.h externs.h
+ln -s ../../c/globals.h globals.h
+ln -s ../../c/segment.h segment.h
+ln -s ../../c/thread.h thread.h
+ln -s ../../c/sort.h sort.h
+ln -s ../../c/compress-io.h compress-io.h
+(cd ../zlib; CFLAGS=" -m64" ./configure --64)
+Checking for gcc...
+Checking for shared library support...
+Building shared library libz.1.2.11.dylib with gcc.
+Checking for size_t... Yes.
+Checking for off64_t... No.
+Checking for fseeko... Yes.
+Checking for strerror... Yes.
+Checking for unistd.h... Yes.
+Checking for stdarg.h... Yes.
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+Checking for vsnprintf() in stdio.h... Yes.
+Checking for return value of vsnprintf()... Yes.
+Checking for attribute(visibility) support... Yes.
+
+gcc  -m64 -Wpointer-arith -Wall -Wextra -Wno-implicit-fallthrough -Werror -O2 -I/opt/X11/include/  -c -DX86_64 -I../boot/a6osx -I../zlib -I../lz4/lib statics.c
+ln -s ../../c/segment.c segment.c
+gcc  -m64 -Wpointer-arith -Wall -Wextra -Wno-implicit-fallthrough -Werror -O2 -I/opt/X11/include/  -c -DX86_64 -I../boot/a6osx -I../zlib -I../lz4/lib segment.c
+ln -s ../../c/alloc.c alloc.c
+gcc  -m64 -Wpointer-arith -Wall -Wextra -Wno-implicit-fallthrough -Werror -O2 -I/opt/X11/include/  -c -DX86_64 -I../boot/a6osx -I../zlib -I../lz4/lib alloc.c
+ln -s ../../c/symbol.c symbol.c
+gcc  -m64 -Wpointer-arith -Wall -Wextra -Wno-implicit-fallthrough -Werror -O2 -I/opt/X11/include/  -c -DX86_64 -I../boot/a6osx -I../zlib -I../lz4/lib symbol.c
+ln -s ../../c/intern.c intern.c
+gcc  -m64 -Wpointer-arith -Wall -Wextra -Wno-implicit-fallthrough -Werror -O2 -I/opt/X11/include/  -c -DX86_64 -I../boot/a6osx -I../zlib -I../lz4/lib intern.c
+ln -s ../../c/gcwrapper.c gcwrapper.c
+gcc  -m64 -Wpointer-arith -Wall -Wextra -Wno-implicit-fallthrough -Werror -O2 -I/opt/X11/include/  -c -DX86_64 -I../boot/a6osx -I../zlib -I../lz4/lib gcwrapper.c
+ln -s ../../c/gc-ocd.c gc-ocd.c
+ln -s ../../c/gc.c gc.c
+gcc  -m64 -Wpointer-arith -Wall -Wextra -Wno-implicit-fallthrough -Werror -O2 -I/opt/X11/include/  -c -DX86_64 -I../boot/a6osx -I../zlib -I../lz4/lib gc-ocd.c
+ln -s ../../c/gc-oce.c gc-oce.c
+gcc  -m64 -Wpointer-arith -Wall -Wextra -Wno-implicit-fallthrough -Werror -O2 -I/opt/X11/include/  -c -DX86_64 -I../boot/a6osx -I../zlib -I../lz4/lib gc-oce.c
+ln -s ../../c/number.c number.c
+gcc  -m64 -Wpointer-arith -Wall -Wextra -Wno-implicit-fallthrough -Werror -O2 -I/opt/X11/include/  -c -DX86_64 -I../boot/a6osx -I../zlib -I../lz4/lib number.c
+ln -s ../../c/schsig.c schsig.c
+gcc  -m64 -Wpointer-arith -Wall -Wextra -Wno-implicit-fallthrough -Werror -O2 -I/opt/X11/include/  -c -DX86_64 -I../boot/a6osx -I../zlib -I../lz4/lib schsig.c
+ln -s ../../c/io.c io.c
+gcc  -m64 -Wpointer-arith -Wall -Wextra -Wno-implicit-fallthrough -Werror -O2 -I/opt/X11/include/  -c -DX86_64 -I../boot/a6osx -I../zlib -I../lz4/lib io.c
+ln -s ../../c/new-io.c new-io.c
+gcc  -m64 -Wpointer-arith -Wall -Wextra -Wno-implicit-fallthrough -Werror -O2 -I/opt/X11/include/  -c -DX86_64 -I../boot/a6osx -I../zlib -I../lz4/lib new-io.c
+ln -s ../../c/print.c print.c
+gcc  -m64 -Wpointer-arith -Wall -Wextra -Wno-implicit-fallthrough -Werror -O2 -I/opt/X11/include/  -c -DX86_64 -I../boot/a6osx -I../zlib -I../lz4/lib print.c
+ln -s ../../c/fasl.c fasl.c
+gcc  -m64 -Wpointer-arith -Wall -Wextra -Wno-implicit-fallthrough -Werror -O2 -I/opt/X11/include/  -c -DX86_64 -I../boot/a6osx -I../zlib -I../lz4/lib fasl.c
+ln -s ../../c/stats.c stats.c
+gcc  -m64 -Wpointer-arith -Wall -Wextra -Wno-implicit-fallthrough -Werror -O2 -I/opt/X11/include/  -c -DX86_64 -I../boot/a6osx -I../zlib -I../lz4/lib stats.c
+ln -s ../../c/foreign.c foreign.c
+gcc  -m64 -Wpointer-arith -Wall -Wextra -Wno-implicit-fallthrough -Werror -O2 -I/opt/X11/include/  -c -DX86_64 -I../boot/a6osx -I../zlib -I../lz4/lib foreign.c
+ln -s ../../c/prim.c prim.c
+gcc  -m64 -Wpointer-arith -Wall -Wextra -Wno-implicit-fallthrough -Werror -O2 -I/opt/X11/include/  -c -DX86_64 -I../boot/a6osx -I../zlib -I../lz4/lib prim.c
+ln -s ../../c/prim5.c prim5.c
+gcc  -m64 -Wpointer-arith -Wall -Wextra -Wno-implicit-fallthrough -Werror -O2 -I/opt/X11/include/  -c -DX86_64 -I../boot/a6osx -I../zlib -I../lz4/lib prim5.c
+ln -s ../../c/flushcache.c flushcache.c
+gcc  -m64 -Wpointer-arith -Wall -Wextra -Wno-implicit-fallthrough -Werror -O2 -I/opt/X11/include/  -c -DX86_64 -I../boot/a6osx -I../zlib -I../lz4/lib flushcache.c
+ln -s ../../c/schlib.c schlib.c
+gcc  -m64 -Wpointer-arith -Wall -Wextra -Wno-implicit-fallthrough -Werror -O2 -I/opt/X11/include/  -c -DX86_64 -I../boot/a6osx -I../zlib -I../lz4/lib schlib.c
+ln -s ../../c/thread.c thread.c
+gcc  -m64 -Wpointer-arith -Wall -Wextra -Wno-implicit-fallthrough -Werror -O2 -I/opt/X11/include/  -c -DX86_64 -I../boot/a6osx -I../zlib -I../lz4/lib thread.c
+ln -s ../../c/expeditor.c expeditor.c
+gcc  -m64 -Wpointer-arith -Wall -Wextra -Wno-implicit-fallthrough -Werror -O2 -I/opt/X11/include/  -c -DX86_64 -I../boot/a6osx -I../zlib -I../lz4/lib expeditor.c
+ln -s ../../c/scheme.c scheme.c
+ln -s ../../c/itest.c itest.c
+gcc  -m64 -Wpointer-arith -Wall -Wextra -Wno-implicit-fallthrough -Werror -O2 -I/opt/X11/include/  -c -DX86_64 -I../boot/a6osx -I../zlib -I../lz4/lib scheme.c
+ln -s ../../c/compress-io.c compress-io.c
+gcc  -m64 -Wpointer-arith -Wall -Wextra -Wno-implicit-fallthrough -Werror -O2 -I/opt/X11/include/  -c -DX86_64 -I../boot/a6osx -I../zlib -I../lz4/lib compress-io.c
+ln -s ../../c/i3le.c i3le.c
+gcc  -m64 -Wpointer-arith -Wall -Wextra -Wno-implicit-fallthrough -Werror -O2 -I/opt/X11/include/  -c -DX86_64 -I../boot/a6osx -I../zlib -I../lz4/lib i3le.c
+
+// 编译压缩库zlib
+(cd ../zlib; /Library/Developer/CommandLineTools/usr/bin/make)
+gcc -m64 -m64 -DHAVE_HIDDEN -I. -c -o example.o test/example.c
+gcc -m64 -m64 -DHAVE_HIDDEN  -c -o adler32.o adler32.c
+gcc -m64 -m64 -DHAVE_HIDDEN  -c -o crc32.o crc32.c
+gcc -m64 -m64 -DHAVE_HIDDEN  -c -o deflate.o deflate.c
+gcc -m64 -m64 -DHAVE_HIDDEN  -c -o infback.o infback.c
+gcc -m64 -m64 -DHAVE_HIDDEN  -c -o inffast.o inffast.c
+gcc -m64 -m64 -DHAVE_HIDDEN  -c -o inflate.o inflate.c
+gcc -m64 -m64 -DHAVE_HIDDEN  -c -o inftrees.o inftrees.c
+gcc -m64 -m64 -DHAVE_HIDDEN  -c -o trees.o trees.c
+gcc -m64 -m64 -DHAVE_HIDDEN  -c -o zutil.o zutil.c
+gcc -m64 -m64 -DHAVE_HIDDEN  -c -o compress.o compress.c
+gcc -m64 -m64 -DHAVE_HIDDEN  -c -o uncompr.o uncompr.c
+gcc -m64 -m64 -DHAVE_HIDDEN  -c -o gzclose.o gzclose.c
+gcc -m64 -m64 -DHAVE_HIDDEN  -c -o gzlib.o gzlib.c
+gcc -m64 -m64 -DHAVE_HIDDEN  -c -o gzread.o gzread.c
+gcc -m64 -m64 -DHAVE_HIDDEN  -c -o gzwrite.o gzwrite.c
+libtool -o libz.a adler32.o crc32.o deflate.o infback.o inffast.o inflate.o inftrees.o trees.o zutil.o compress.o uncompr.o gzclose.o gzlib.o gzread.o gzwrite.o 
+gcc -m64 -m64 -DHAVE_HIDDEN -o example example.o -L. libz.a
+gcc -m64 -m64 -DHAVE_HIDDEN -I. -c -o minigzip.o test/minigzip.c
+gcc -m64 -m64 -DHAVE_HIDDEN -o minigzip minigzip.o -L. libz.a
+gcc -m64 -fPIC -m64 -DHAVE_HIDDEN  -DPIC -c -o objs/adler32.o adler32.c
+gcc -m64 -fPIC -m64 -DHAVE_HIDDEN  -DPIC -c -o objs/crc32.o crc32.c
+gcc -m64 -fPIC -m64 -DHAVE_HIDDEN  -DPIC -c -o objs/deflate.o deflate.c
+gcc -m64 -fPIC -m64 -DHAVE_HIDDEN  -DPIC -c -o objs/infback.o infback.c
+gcc -m64 -fPIC -m64 -DHAVE_HIDDEN  -DPIC -c -o objs/inffast.o inffast.c
+gcc -m64 -fPIC -m64 -DHAVE_HIDDEN  -DPIC -c -o objs/inflate.o inflate.c
+gcc -m64 -fPIC -m64 -DHAVE_HIDDEN  -DPIC -c -o objs/inftrees.o inftrees.c
+gcc -m64 -fPIC -m64 -DHAVE_HIDDEN  -DPIC -c -o objs/trees.o trees.c
+gcc -m64 -fPIC -m64 -DHAVE_HIDDEN  -DPIC -c -o objs/zutil.o zutil.c
+gcc -m64 -fPIC -m64 -DHAVE_HIDDEN  -DPIC -c -o objs/compress.o compress.c
+gcc -m64 -fPIC -m64 -DHAVE_HIDDEN  -DPIC -c -o objs/uncompr.o uncompr.c
+gcc -m64 -fPIC -m64 -DHAVE_HIDDEN  -DPIC -c -o objs/gzclose.o gzclose.c
+gcc -m64 -fPIC -m64 -DHAVE_HIDDEN  -DPIC -c -o objs/gzlib.o gzlib.c
+gcc -m64 -fPIC -m64 -DHAVE_HIDDEN  -DPIC -c -o objs/gzread.o gzread.c
+gcc -m64 -fPIC -m64 -DHAVE_HIDDEN  -DPIC -c -o objs/gzwrite.o gzwrite.c
+gcc -dynamiclib -install_name /usr/local/lib/libz.1.dylib -compatibility_version 1 -current_version 1.2.11 -m64 -fPIC -m64 -DHAVE_HIDDEN -o libz.1.2.11.dylib adler32.lo crc32.lo deflate.lo infback.lo inffast.lo inflate.lo inftrees.lo trees.lo zutil.lo compress.lo uncompr.lo gzclose.lo gzlib.lo gzread.lo gzwrite.lo  -lc 
+rm -f libz.dylib libz.1.dylib
+ln -s libz.1.2.11.dylib libz.dylib
+ln -s libz.1.2.11.dylib libz.1.dylib
+gcc -m64 -m64 -DHAVE_HIDDEN -o examplesh example.o -L. libz.1.2.11.dylib
+gcc -m64 -m64 -DHAVE_HIDDEN -o minigzipsh minigzip.o -L. libz.1.2.11.dylib
+
+// 编译压缩库lz4
+(cd ../lz4/lib; CFLAGS=" -m64" /Library/Developer/CommandLineTools/usr/bin/make liblz4.a)
+compiling static library
+
+// 链接kernel.o
+ld -r -o ../boot/a6osx/kernel.o statics.o segment.o alloc.o symbol.o intern.o gcwrapper.o gc-ocd.o gc-oce.o number.o schsig.o io.o new-io.o print.o fasl.o stats.o foreign.o prim.o prim5.o flushcache.o schlib.o thread.o expeditor.o scheme.o compress-io.o i3le.o ../zlib/libz.a ../lz4/lib/liblz4.a
+
+// 编译main.o
+ln -s ../../c/main.c main.c
+gcc  -m64 -Wpointer-arith -Wall -Wextra -Wno-implicit-fallthrough -Werror -O2 -I/opt/X11/include/  -c -DX86_64 -I../boot/a6osx -I../zlib -I../lz4/lib main.c
+cp -p main.o ../boot/a6osx/main.o
+
+// 生成scheme可执行文件
+gcc  -m64 -Wpointer-arith -Wall -Wextra -Wno-implicit-fallthrough -Werror -O2 -I/opt/X11/include/  -o ../bin/a6osx/scheme ../boot/a6osx/kernel.o ../boot/a6osx/main.o -liconv -lm -lncurses
+
+(cd s && /Library/Developer/CommandLineTools/usr/bin/make bootstrap)
+ln -s ../../s/library.ss library.ss
+ln -s ../../s/prims.ss prims.ss
+ln -s ../../s/mathprims.ss mathprims.ss
+ln -s ../../s/record.ss record.ss
+ln -s ../../s/5_1.ss 5_1.ss
+ln -s ../../s/5_2.ss 5_2.ss
+ln -s ../../s/5_3.ss 5_3.ss
+ln -s ../../s/strnum.ss strnum.ss
+ln -s ../../s/bytevector.ss bytevector.ss
+ln -s ../../s/5_4.ss 5_4.ss
+ln -s ../../s/5_6.ss 5_6.ss
+ln -s ../../s/5_7.ss 5_7.ss
+ln -s ../../s/event.ss event.ss
+ln -s ../../s/4.ss 4.ss
+ln -s ../../s/front.ss front.ss
+ln -s ../../s/foreign.ss foreign.ss
+ln -s ../../s/6.ss 6.ss
+ln -s ../../s/print.ss print.ss
+ln -s ../../s/newhash.ss newhash.ss
+ln -s ../../s/format.ss format.ss
+ln -s ../../s/date.ss date.ss
+ln -s ../../s/7.ss 7.ss
+ln -s ../../s/cafe.ss cafe.ss
+ln -s ../../s/trace.ss trace.ss
+ln -s ../../s/engine.ss engine.ss
+ln -s ../../s/interpret.ss interpret.ss
+ln -s ../../s/cprep.ss cprep.ss
+ln -s ../../s/cpcheck.ss cpcheck.ss
+ln -s ../../s/cp0.ss cp0.ss
+ln -s ../../s/cpvalid.ss cpvalid.ss
+ln -s ../../s/cpcommonize.ss cpcommonize.ss
+ln -s ../../s/cpletrec.ss cpletrec.ss
+ln -s ../../s/inspect.ss inspect.ss
+ln -s ../../s/enum.ss enum.ss
+ln -s ../../s/io.ss io.ss
+ln -s ../../s/read.ss read.ss
+ln -s ../../s/primvars.ss primvars.ss
+ln -s ../../s/syntax.ss syntax.ss
+ln -s ../../s/costctr.ss costctr.ss
+ln -s ../../s/expeditor.ss expeditor.ss
+ln -s ../../s/exceptions.ss exceptions.ss
+ln -s ../../s/pretty.ss pretty.ss
+ln -s ../../s/env.ss env.ss
+ln -s ../../s/fasl.ss fasl.ss
+ln -s ../../s/reloc.ss reloc.ss
+ln -s ../../s/pdhtml.ss pdhtml.ss
+ln -s ../../s/strip.ss strip.ss
+ln -s ../../s/ftype.ss ftype.ss
+ln -s ../../s/back.ss back.ss
+
+ln -s ../../s/cpnanopass.ss cpnanopass.ss
+ln -s ../../s/compile.ss compile.ss
+ln -s ../../s/cback.ss cback.ss
+
+ln -s ../../s/cmacros.ss cmacros.ss
+
+ln -s ../../s/x86_64.ss x86_64.ss
+
+ln -s ../../s/setup.ss setup.ss
+ln -s ../../s/debug.ss debug.ss
+ln -s ../../s/priminfo.ss priminfo.ss
+ln -s ../../s/primdata.ss primdata.ss
+ln -s ../../s/layout.ss layout.ss
+ln -s ../../s/base-lang.ss base-lang.ss
+ln -s ../../s/expand-lang.ss expand-lang.ss
+ln -s ../../s/primref.ss primref.ss
+ln -s ../../s/types.ss types.ss
+ln -s ../../s/io-types.ss io-types.ss
+ln -s ../../s/fasl-helpers.ss fasl-helpers.ss
+ln -s ../../s/hashtable-types.ss hashtable-types.ss
+ln -s ../../s/np-languages.ss np-languages.ss
+
+/Library/Developer/CommandLineTools/usr/bin/make allx
+rm -f *.a6osx xpatch patch *.patch *.so *.asm script.all header.tmp *.html
+rm -rf nanopass
+cp -p -f ../boot/a6osx/petite.boot ../boot/a6osx/sbb
+cp -p -f ../boot/a6osx/scheme.boot ../boot/a6osx/scb
+
+/Library/Developer/CommandLineTools/usr/bin/make all
+echo '(reset-handler abort)'\
+             '(base-exception-handler (lambda (c) (fresh-line) (display-condition c) (newline) (reset)))'\
+             '(keyboard-interrupt-handler (lambda () (display "interrupted---aborting\n") (reset)))'\
+             '(optimize-level 3)'\
+             '(debug-level 0)'\
+             '(commonization-level (commonization-level))'\
+             '(compile-compressed #t)'\
+             '(compress-format (compress-format))'\
+             '(compress-level (compress-level))'\
+             '(generate-inspector-information #f)'\
+             '(subset-mode (quote system))'\
+             '(compile-file "cmacros.ss" "cmacros.so")'\
+             | ../bin/a6osx/scheme -q
+compiling cmacros.ss with output to cmacros.so
+echo '(reset-handler abort)'\
+             '(base-exception-handler (lambda (c) (fresh-line) (display-condition c) (newline) (reset)))'\
+             '(keyboard-interrupt-handler (lambda () (display "interrupted---aborting\n") (reset)))'\
+             '(optimize-level 3)'\
+             '(debug-level 0)'\
+             '(commonization-level (commonization-level))'\
+             '(compile-compressed #t)'\
+             '(compress-format (compress-format))'\
+             '(compress-level (compress-level))'\
+             '(generate-inspector-information #f)'\
+             '(subset-mode (quote system))'\
+             '(compile-file "priminfo.ss" "priminfo.so")'\
+             | ../bin/a6osx/scheme -q cmacros.so
+compiling priminfo.ss with output to priminfo.so
+echo '(reset-handler abort)'\
+             '(base-exception-handler (lambda (c) (fresh-line) (display-condition c) (newline) (reset)))'\
+	     '(keyboard-interrupt-handler (lambda () (display "interrupted---aborting\n") (reset)))'\
+             '(optimize-level 3)'\
+             '(debug-level 0)'\
+             '(commonization-level (commonization-level))'\
+             '(compile-compressed #t)'\
+             '(compress-format (compress-format))'\
+             '(compress-level (compress-level))'\
+             '(generate-inspector-information #f)'\
+             '(subset-mode (quote system))'\
+             '(compile-file "primvars.ss" "primvars.so")'\
+             | ../bin/a6osx/scheme -q cmacros.so priminfo.so
+compiling primvars.ss with output to primvars.so
+echo '(reset-handler abort)'\
+             '(base-exception-handler (lambda (c) (fresh-line) (display-condition c) (newline) (reset)))'\
+	     '(keyboard-interrupt-handler (lambda () (display "interrupted---aborting\n") (reset)))'\
+             '(optimize-level 3)'\
+             '(debug-level 0)'\
+             '(commonization-level (commonization-level))'\
+             '(compile-compressed #t)'\
+             '(compress-format (compress-format))'\
+             '(compress-level (compress-level))'\
+             '(generate-inspector-information #f)'\
+             '(subset-mode (quote system))'\
+             '(compile-file "env.ss" "env.so")'\
+             | ../bin/a6osx/scheme -q cmacros.so priminfo.so
+compiling env.ss with output to env.so
+echo '(reset-handler abort)'\
+             '(base-exception-handler (lambda (c) (fresh-line) (display-condition c) (newline) (reset)))'\
+	     '(keyboard-interrupt-handler (lambda () (display "interrupted---aborting\n") (reset)))'\
+             '(optimize-level 3)'\
+             '(debug-level 0)'\
+             '(commonization-level (commonization-level))'\
+             '(compile-compressed #t)'\
+             '(compress-format (compress-format))'\
+             '(compress-level (compress-level))'\
+             '(generate-inspector-information #f)'\
+             '(subset-mode (quote system))'\
+             '(compile-file "setup.ss" "setup.so")'\
+             | ../bin/a6osx/scheme -q cmacros.so priminfo.so
+compiling setup.ss with output to setup.so
+echo '(reset-handler abort)'\
+             '(base-exception-handler (lambda (c) (fresh-line) (display-condition c) (newline) (reset)))'\
+             '(keyboard-interrupt-handler (lambda () (display "interrupted---aborting\n") (reset)))'\
+             '(optimize-level 3)'\
+             '(debug-level 0)'\
+             '(commonization-level (commonization-level))'\
+             '(compile-compressed #t)'\
+             '(compress-format (compress-format))'\
+             '(compress-level (compress-level))'\
+             '(generate-inspector-information #f)'\
+             '(collect-trip-bytes (expt 2 24))'\
+             '(collect-request-handler (lambda () (collect 0 1)))'\
+             '(collect 1 2)'\
+             '(compile-library "../nanopass/nanopass.ss" "nanopass.so")'\
+             | ../bin/a6osx/scheme -q --libdirs "../nanopass::." --compile-imported-libraries
+compiling ../nanopass/nanopass.ss with output to nanopass.so
+compiling ../nanopass/nanopass/language.ss with output to nanopass/language.so
+compiling ../nanopass/nanopass/helpers.ss with output to nanopass/helpers.so
+compiling ../nanopass/nanopass/implementation-helpers.chezscheme.sls with output to nanopass/implementation-helpers.chezscheme.so
+compiling ../nanopass/nanopass/language-helpers.ss with output to nanopass/language-helpers.so
+compiling ../nanopass/nanopass/records.ss with output to nanopass/records.so
+compiling ../nanopass/nanopass/syntaxconvert.ss with output to nanopass/syntaxconvert.so
+compiling ../nanopass/nanopass/unparser.ss with output to nanopass/unparser.so
+compiling ../nanopass/nanopass/meta-parser.ss with output to nanopass/meta-parser.so
+compiling ../nanopass/nanopass/meta-syntax-dispatch.ss with output to nanopass/meta-syntax-dispatch.so
+compiling ../nanopass/nanopass/parser.ss with output to nanopass/parser.so
+compiling ../nanopass/nanopass/nano-syntax-dispatch.ss with output to nanopass/nano-syntax-dispatch.so
+compiling ../nanopass/nanopass/language-node-counter.ss with output to nanopass/language-node-counter.so
+compiling ../nanopass/nanopass/pass.ss with output to nanopass/pass.so
+echo '(reset-handler abort)'\
+             '(for-each load (command-line-arguments))'\
+             '(optimize-level 3)'\
+             '(debug-level 0)'\
+             '(commonization-level (commonization-level))'\
+             '(compile-compressed #t)'\
+             '(compress-format (compress-format))'\
+             '(compress-level (compress-level))'\
+             '(when #f (compile-profile (quote source)))'\
+             '(when #f (compile-profile (quote block)))'\
+             '(when #f (profile-load-data "source.pd"))'\
+             '(when #f (profile-load-data "block.pd"))'\
+             '(generate-inspector-information #f)'\
+             '(generate-allocation-counts #f)'\
+             '(generate-instruction-counts #f)'\
+             '(#%$enable-pass-timing #f)'\
+             '(run-cp0 (lambda (cp0 x)'\
+             '           (do ([i 2 (fx- i 1)] [x x (cp0 x)])'\
+             '               ((fx= i 0) x))))'\
+             '(collect-trip-bytes (expt 2 24))'\
+             '(collect-request-handler (lambda () (collect 0 1)))'\
+             '(time (for-each (lambda (x y)'\
+             '                   (collect 1 2)'\
+             '                   (compile-file (symbol->string x)'\
+             '                                 (symbol->string y)'\
+             '                                 (quote a6osx)))'\
+             '                (quote (library.ss prims.ss mathprims.ss record.ss 5_1.ss 5_2.ss 5_3.ss strnum.ss bytevector.ss 5_4.ss 5_6.ss 5_7.ss event.ss 4.ss front.ss foreign.ss 6.ss print.ss newhash.ss format.ss date.ss 7.ss cafe.ss trace.ss engine.ss interpret.ss cprep.ss cpcheck.ss cp0.ss cpvalid.ss cpcommonize.ss cpletrec.ss inspect.ss enum.ss io.ss read.ss primvars.ss syntax.ss costctr.ss expeditor.ss exceptions.ss pretty.ss env.ss fasl.ss reloc.ss pdhtml.ss strip.ss ftype.ss back.ss cpnanopass.ss compile.ss cback.ss))'\
+             '                (quote (library.a6osx prims.a6osx mathprims.a6osx record.a6osx 5_1.a6osx 5_2.a6osx 5_3.a6osx strnum.a6osx bytevector.a6osx 5_4.a6osx 5_6.a6osx 5_7.a6osx event.a6osx 4.a6osx front.a6osx foreign.a6osx 6.a6osx print.a6osx newhash.a6osx format.a6osx date.a6osx 7.a6osx cafe.a6osx trace.a6osx engine.a6osx interpret.a6osx cprep.a6osx cpcheck.a6osx cp0.a6osx cpvalid.a6osx cpcommonize.a6osx cpletrec.a6osx inspect.a6osx enum.a6osx io.a6osx read.a6osx primvars.a6osx syntax.a6osx costctr.a6osx expeditor.a6osx exceptions.a6osx pretty.a6osx env.a6osx fasl.a6osx reloc.a6osx pdhtml.a6osx strip.a6osx ftype.a6osx back.a6osx cpnanopass.a6osx compile.a6osx cback.a6osx))))'\
+             '(when #f (#%$print-pass-stats))'\
+             '(apply #%$make-boot-file "../boot/a6osx/petite.boot" (quote a6osx) (quote ())'\
+             '  (map symbol->string (quote (library.a6osx prims.a6osx mathprims.a6osx record.a6osx 5_1.a6osx 5_2.a6osx 5_3.a6osx strnum.a6osx bytevector.a6osx 5_4.a6osx 5_6.a6osx 5_7.a6osx event.a6osx 4.a6osx front.a6osx foreign.a6osx 6.a6osx print.a6osx newhash.a6osx format.a6osx date.a6osx 7.a6osx cafe.a6osx trace.a6osx engine.a6osx interpret.a6osx cprep.a6osx cpcheck.a6osx cp0.a6osx cpvalid.a6osx cpcommonize.a6osx cpletrec.a6osx inspect.a6osx enum.a6osx io.a6osx read.a6osx primvars.a6osx syntax.a6osx costctr.a6osx expeditor.a6osx exceptions.a6osx pretty.a6osx env.a6osx fasl.a6osx reloc.a6osx pdhtml.a6osx strip.a6osx ftype.a6osx back.a6osx))))'\
+             '(apply #%$make-boot-file "../boot/a6osx/scheme.boot" (quote a6osx) (quote ("petite"))'\
+             '  (map symbol->string (quote (cpnanopass.a6osx compile.a6osx cback.a6osx))))'\
+             '(when #f (profile-dump-html))'\
+             '(when #f (profile-dump-data "source.pd"))'\
+             '(when #f (profile-dump-data "block.pd"))'\
+             > script.all
+../bin/a6osx/scheme -q cmacros.so priminfo.so primvars.so env.so setup.so  --script script.all
+compiling library.ss with output to library.a6osx
+compiling prims.ss with output to prims.a6osx
+compiling mathprims.ss with output to mathprims.a6osx
+compiling record.ss with output to record.a6osx
+compiling 5_1.ss with output to 5_1.a6osx
+compiling 5_2.ss with output to 5_2.a6osx
+compiling 5_3.ss with output to 5_3.a6osx
+compiling strnum.ss with output to strnum.a6osx
+compiling bytevector.ss with output to bytevector.a6osx
+compiling 5_4.ss with output to 5_4.a6osx
+compiling 5_6.ss with output to 5_6.a6osx
+compiling 5_7.ss with output to 5_7.a6osx
+compiling event.ss with output to event.a6osx
+compiling 4.ss with output to 4.a6osx
+compiling front.ss with output to front.a6osx
+compiling foreign.ss with output to foreign.a6osx
+compiling 6.ss with output to 6.a6osx
+compiling print.ss with output to print.a6osx
+compiling newhash.ss with output to newhash.a6osx
+compiling format.ss with output to format.a6osx
+compiling date.ss with output to date.a6osx
+compiling 7.ss with output to 7.a6osx
+compiling cafe.ss with output to cafe.a6osx
+compiling trace.ss with output to trace.a6osx
+compiling engine.ss with output to engine.a6osx
+compiling interpret.ss with output to interpret.a6osx
+compiling cprep.ss with output to cprep.a6osx
+compiling cpcheck.ss with output to cpcheck.a6osx
+compiling cp0.ss with output to cp0.a6osx
+compiling cpvalid.ss with output to cpvalid.a6osx
+compiling cpcommonize.ss with output to cpcommonize.a6osx
+compiling cpletrec.ss with output to cpletrec.a6osx
+compiling inspect.ss with output to inspect.a6osx
+compiling enum.ss with output to enum.a6osx
+compiling io.ss with output to io.a6osx
+compiling read.ss with output to read.a6osx
+compiling primvars.ss with output to primvars.a6osx
+compiling syntax.ss with output to syntax.a6osx
+compiling costctr.ss with output to costctr.a6osx
+compiling expeditor.ss with output to expeditor.a6osx
+compiling exceptions.ss with output to exceptions.a6osx
+compiling pretty.ss with output to pretty.a6osx
+compiling env.ss with output to env.a6osx
+compiling fasl.ss with output to fasl.a6osx
+compiling reloc.ss with output to reloc.a6osx
+compiling pdhtml.ss with output to pdhtml.a6osx
+compiling strip.ss with output to strip.a6osx
+compiling ftype.ss with output to ftype.a6osx
+compiling back.ss with output to back.a6osx
+compiling cpnanopass.ss with output to cpnanopass.a6osx
+compiling compile.ss with output to compile.a6osx
+compiling cback.ss with output to cback.a6osx
+(time (for-each (lambda (...) ...) ...))
+    485 collections
+    12.729790041s elapsed cpu time, including 4.884088488s collecting
+    13.352887000s elapsed real time, including 5.248785000s collecting
+    7642082192 bytes allocated, including 7639991056 bytes reclaimed
+ln -s ../../s/mkheader.ss mkheader.ss
+echo '(reset-handler abort)'\
+             '(base-exception-handler (lambda (c) (fresh-line) (display-condition c) (newline) (reset)))'\
+             '(keyboard-interrupt-handler (lambda () (display "interrupted---aborting\n") (reset)))'\
+             '(optimize-level 3)'\
+             '(debug-level 0)'\
+             '(commonization-level (commonization-level))'\
+             '(compile-compressed #t)'\
+             '(compress-format (compress-format))'\
+             '(compress-level (compress-level))'\
+             '(generate-inspector-information #f)'\
+             '(subset-mode (quote system))'\
+             '(compile-file "mkheader.ss" "mkheader.so")'\
+             | ../bin/a6osx/scheme -q cmacros.so priminfo.so primvars.so env.so
+compiling mkheader.ss with output to mkheader.so
+(if [ -r ../boot/a6osx/scheme.h ]; then mv -f ../boot/a6osx/scheme.h ../boot/a6osx/scheme.h.bak; fi)
+echo '(reset-handler abort)'\
+             '(mkscheme.h "../boot/a6osx/scheme.h" (quote a6osx))' |\
+         ../bin/a6osx/scheme -q cmacros.so priminfo.so primvars.so env.so setup.so mkheader.so
+(if `cmp -s ../boot/a6osx/scheme.h ../boot/a6osx/scheme.h.bak`;\
+          then mv -f ../boot/a6osx/scheme.h.bak ../boot/a6osx/scheme.h;\
+          else rm -f ../boot/a6osx/scheme.h.bak; fi)
+(if [ -r ../boot/a6osx/equates.h ]; then mv -f ../boot/a6osx/equates.h ../boot/a6osx/equates.h.bak; fi)
+echo '(reset-handler abort)'\
+             '(mkequates.h "../boot/a6osx/equates.h")' |\
+         ../bin/a6osx/scheme -q cmacros.so priminfo.so primvars.so env.so setup.so mkheader.so
+(if `cmp -s ../boot/a6osx/equates.h ../boot/a6osx/equates.h.bak`;\
+          then mv -f ../boot/a6osx/equates.h.bak ../boot/a6osx/equates.h;\
+          else rm -f ../boot/a6osx/equates.h.bak; fi)
+error: unknown option `exclude=*'
+usage: git describe [<options>] [<commit-ish>...]
+   or: git describe [<options>] --dirty
+
+    --contains            find the tag that comes after the commit
+    --debug               debug search strategy on stderr
+    --all                 use any ref
+    --tags                use any tag, even unannotated
+    --long                always use long format
+    --first-parent        only follow first parent
+    --abbrev[=<n>]        use <n> digits to display SHA-1s
+    --exact-match         only output exact matches
+    --candidates <n>      consider <n> most recent tags (default: 10)
+    --match <pattern>     only consider tags matching <pattern>
+    --always              show abbreviated commit object as fallback
+    --dirty[=<mark>]      append <mark> on dirty working tree (default: "-dirty")
+
+if /Library/Developer/CommandLineTools/usr/bin/make checkboot > /dev/null 2>&1; then echo fine ; else\
+          /Library/Developer/CommandLineTools/usr/bin/make prettyclean saveboot &&\
+          /Library/Developer/CommandLineTools/usr/bin/make all &&\
+          if /Library/Developer/CommandLineTools/usr/bin/make checkboot > /dev/null 2>&1; then echo fine ; else\
+            /Library/Developer/CommandLineTools/usr/bin/make prettyclean saveboot &&\
+            /Library/Developer/CommandLineTools/usr/bin/make all &&\
+            /Library/Developer/CommandLineTools/usr/bin/make checkboot ;\
+          fi\
+        fi
+rm -f *.a6osx xpatch patch *.patch *.so *.asm script.all header.tmp *.html
+rm -rf nanopass
+cp -p -f ../boot/a6osx/petite.boot ../boot/a6osx/sbb
+cp -p -f ../boot/a6osx/scheme.boot ../boot/a6osx/scb
+echo '(reset-handler abort)'\
+             '(base-exception-handler (lambda (c) (fresh-line) (display-condition c) (newline) (reset)))'\
+             '(keyboard-interrupt-handler (lambda () (display "interrupted---aborting\n") (reset)))'\
+             '(optimize-level 3)'\
+             '(debug-level 0)'\
+             '(commonization-level (commonization-level))'\
+             '(compile-compressed #t)'\
+             '(compress-format (compress-format))'\
+             '(compress-level (compress-level))'\
+             '(generate-inspector-information #f)'\
+             '(subset-mode (quote system))'\
+             '(compile-file "cmacros.ss" "cmacros.so")'\
+             | ../bin/a6osx/scheme -q
+compiling cmacros.ss with output to cmacros.so
+echo '(reset-handler abort)'\
+             '(base-exception-handler (lambda (c) (fresh-line) (display-condition c) (newline) (reset)))'\
+             '(keyboard-interrupt-handler (lambda () (display "interrupted---aborting\n") (reset)))'\
+             '(optimize-level 3)'\
+             '(debug-level 0)'\
+             '(commonization-level (commonization-level))'\
+             '(compile-compressed #t)'\
+             '(compress-format (compress-format))'\
+             '(compress-level (compress-level))'\
+             '(generate-inspector-information #f)'\
+             '(subset-mode (quote system))'\
+             '(compile-file "priminfo.ss" "priminfo.so")'\
+             | ../bin/a6osx/scheme -q cmacros.so
+compiling priminfo.ss with output to priminfo.so
+echo '(reset-handler abort)'\
+             '(base-exception-handler (lambda (c) (fresh-line) (display-condition c) (newline) (reset)))'\
+	     '(keyboard-interrupt-handler (lambda () (display "interrupted---aborting\n") (reset)))'\
+             '(optimize-level 3)'\
+             '(debug-level 0)'\
+             '(commonization-level (commonization-level))'\
+             '(compile-compressed #t)'\
+             '(compress-format (compress-format))'\
+             '(compress-level (compress-level))'\
+             '(generate-inspector-information #f)'\
+             '(subset-mode (quote system))'\
+             '(compile-file "primvars.ss" "primvars.so")'\
+             | ../bin/a6osx/scheme -q cmacros.so priminfo.so
+compiling primvars.ss with output to primvars.so
+echo '(reset-handler abort)'\
+             '(base-exception-handler (lambda (c) (fresh-line) (display-condition c) (newline) (reset)))'\
+	     '(keyboard-interrupt-handler (lambda () (display "interrupted---aborting\n") (reset)))'\
+             '(optimize-level 3)'\
+             '(debug-level 0)'\
+             '(commonization-level (commonization-level))'\
+             '(compile-compressed #t)'\
+             '(compress-format (compress-format))'\
+             '(compress-level (compress-level))'\
+             '(generate-inspector-information #f)'\
+             '(subset-mode (quote system))'\
+             '(compile-file "env.ss" "env.so")'\
+             | ../bin/a6osx/scheme -q cmacros.so priminfo.so
+compiling env.ss with output to env.so
+echo '(reset-handler abort)'\
+             '(base-exception-handler (lambda (c) (fresh-line) (display-condition c) (newline) (reset)))'\
+	     '(keyboard-interrupt-handler (lambda () (display "interrupted---aborting\n") (reset)))'\
+             '(optimize-level 3)'\
+             '(debug-level 0)'\
+             '(commonization-level (commonization-level))'\
+             '(compile-compressed #t)'\
+             '(compress-format (compress-format))'\
+             '(compress-level (compress-level))'\
+             '(generate-inspector-information #f)'\
+             '(subset-mode (quote system))'\
+             '(compile-file "setup.ss" "setup.so")'\
+             | ../bin/a6osx/scheme -q cmacros.so priminfo.so
+compiling setup.ss with output to setup.so
+echo '(reset-handler abort)'\
+             '(base-exception-handler (lambda (c) (fresh-line) (display-condition c) (newline) (reset)))'\
+             '(keyboard-interrupt-handler (lambda () (display "interrupted---aborting\n") (reset)))'\
+             '(optimize-level 3)'\
+             '(debug-level 0)'\
+             '(commonization-level (commonization-level))'\
+             '(compile-compressed #t)'\
+             '(compress-format (compress-format))'\
+             '(compress-level (compress-level))'\
+             '(generate-inspector-information #f)'\
+             '(collect-trip-bytes (expt 2 24))'\
+             '(collect-request-handler (lambda () (collect 0 1)))'\
+             '(collect 1 2)'\
+             '(compile-library "../nanopass/nanopass.ss" "nanopass.so")'\
+             | ../bin/a6osx/scheme -q --libdirs "../nanopass::." --compile-imported-libraries
+compiling ../nanopass/nanopass.ss with output to nanopass.so
+compiling ../nanopass/nanopass/language.ss with output to nanopass/language.so
+compiling ../nanopass/nanopass/helpers.ss with output to nanopass/helpers.so
+compiling ../nanopass/nanopass/implementation-helpers.chezscheme.sls with output to nanopass/implementation-helpers.chezscheme.so
+compiling ../nanopass/nanopass/language-helpers.ss with output to nanopass/language-helpers.so
+compiling ../nanopass/nanopass/records.ss with output to nanopass/records.so
+compiling ../nanopass/nanopass/syntaxconvert.ss with output to nanopass/syntaxconvert.so
+compiling ../nanopass/nanopass/unparser.ss with output to nanopass/unparser.so
+compiling ../nanopass/nanopass/meta-parser.ss with output to nanopass/meta-parser.so
+compiling ../nanopass/nanopass/meta-syntax-dispatch.ss with output to nanopass/meta-syntax-dispatch.so
+compiling ../nanopass/nanopass/parser.ss with output to nanopass/parser.so
+compiling ../nanopass/nanopass/nano-syntax-dispatch.ss with output to nanopass/nano-syntax-dispatch.so
+compiling ../nanopass/nanopass/language-node-counter.ss with output to nanopass/language-node-counter.so
+compiling ../nanopass/nanopass/pass.ss with output to nanopass/pass.so
+echo '(reset-handler abort)'\
+             '(for-each load (command-line-arguments))'\
+             '(optimize-level 3)'\
+             '(debug-level 0)'\
+             '(commonization-level (commonization-level))'\
+             '(compile-compressed #t)'\
+             '(compress-format (compress-format))'\
+             '(compress-level (compress-level))'\
+             '(when #f (compile-profile (quote source)))'\
+             '(when #f (compile-profile (quote block)))'\
+             '(when #f (profile-load-data "source.pd"))'\
+             '(when #f (profile-load-data "block.pd"))'\
+             '(generate-inspector-information #f)'\
+             '(generate-allocation-counts #f)'\
+             '(generate-instruction-counts #f)'\
+             '(#%$enable-pass-timing #f)'\
+             '(run-cp0 (lambda (cp0 x)'\
+             '           (do ([i 2 (fx- i 1)] [x x (cp0 x)])'\
+             '               ((fx= i 0) x))))'\
+             '(collect-trip-bytes (expt 2 24))'\
+             '(collect-request-handler (lambda () (collect 0 1)))'\
+             '(time (for-each (lambda (x y)'\
+             '                   (collect 1 2)'\
+             '                   (compile-file (symbol->string x)'\
+             '                                 (symbol->string y)'\
+             '                                 (quote a6osx)))'\
+             '                (quote (library.ss prims.ss mathprims.ss record.ss 5_1.ss 5_2.ss 5_3.ss strnum.ss bytevector.ss 5_4.ss 5_6.ss 5_7.ss event.ss 4.ss front.ss foreign.ss 6.ss print.ss newhash.ss format.ss date.ss 7.ss cafe.ss trace.ss engine.ss interpret.ss cprep.ss cpcheck.ss cp0.ss cpvalid.ss cpcommonize.ss cpletrec.ss inspect.ss enum.ss io.ss read.ss primvars.ss syntax.ss costctr.ss expeditor.ss exceptions.ss pretty.ss env.ss fasl.ss reloc.ss pdhtml.ss strip.ss ftype.ss back.ss cpnanopass.ss compile.ss cback.ss))'\
+             '                (quote (library.a6osx prims.a6osx mathprims.a6osx record.a6osx 5_1.a6osx 5_2.a6osx 5_3.a6osx strnum.a6osx bytevector.a6osx 5_4.a6osx 5_6.a6osx 5_7.a6osx event.a6osx 4.a6osx front.a6osx foreign.a6osx 6.a6osx print.a6osx newhash.a6osx format.a6osx date.a6osx 7.a6osx cafe.a6osx trace.a6osx engine.a6osx interpret.a6osx cprep.a6osx cpcheck.a6osx cp0.a6osx cpvalid.a6osx cpcommonize.a6osx cpletrec.a6osx inspect.a6osx enum.a6osx io.a6osx read.a6osx primvars.a6osx syntax.a6osx costctr.a6osx expeditor.a6osx exceptions.a6osx pretty.a6osx env.a6osx fasl.a6osx reloc.a6osx pdhtml.a6osx strip.a6osx ftype.a6osx back.a6osx cpnanopass.a6osx compile.a6osx cback.a6osx))))'\
+             '(when #f (#%$print-pass-stats))'\
+             '(apply #%$make-boot-file "../boot/a6osx/petite.boot" (quote a6osx) (quote ())'\
+             '  (map symbol->string (quote (library.a6osx prims.a6osx mathprims.a6osx record.a6osx 5_1.a6osx 5_2.a6osx 5_3.a6osx strnum.a6osx bytevector.a6osx 5_4.a6osx 5_6.a6osx 5_7.a6osx event.a6osx 4.a6osx front.a6osx foreign.a6osx 6.a6osx print.a6osx newhash.a6osx format.a6osx date.a6osx 7.a6osx cafe.a6osx trace.a6osx engine.a6osx interpret.a6osx cprep.a6osx cpcheck.a6osx cp0.a6osx cpvalid.a6osx cpcommonize.a6osx cpletrec.a6osx inspect.a6osx enum.a6osx io.a6osx read.a6osx primvars.a6osx syntax.a6osx costctr.a6osx expeditor.a6osx exceptions.a6osx pretty.a6osx env.a6osx fasl.a6osx reloc.a6osx pdhtml.a6osx strip.a6osx ftype.a6osx back.a6osx))))'\
+             '(apply #%$make-boot-file "../boot/a6osx/scheme.boot" (quote a6osx) (quote ("petite"))'\
+             '  (map symbol->string (quote (cpnanopass.a6osx compile.a6osx cback.a6osx))))'\
+             '(when #f (profile-dump-html))'\
+             '(when #f (profile-dump-data "source.pd"))'\
+             '(when #f (profile-dump-data "block.pd"))'\
+             > script.all
+../bin/a6osx/scheme -q cmacros.so priminfo.so primvars.so env.so setup.so  --script script.all
+compiling library.ss with output to library.a6osx
+compiling prims.ss with output to prims.a6osx
+compiling mathprims.ss with output to mathprims.a6osx
+compiling record.ss with output to record.a6osx
+compiling 5_1.ss with output to 5_1.a6osx
+compiling 5_2.ss with output to 5_2.a6osx
+compiling 5_3.ss with output to 5_3.a6osx
+compiling strnum.ss with output to strnum.a6osx
+compiling bytevector.ss with output to bytevector.a6osx
+compiling 5_4.ss with output to 5_4.a6osx
+compiling 5_6.ss with output to 5_6.a6osx
+compiling 5_7.ss with output to 5_7.a6osx
+compiling event.ss with output to event.a6osx
+compiling 4.ss with output to 4.a6osx
+compiling front.ss with output to front.a6osx
+compiling foreign.ss with output to foreign.a6osx
+compiling 6.ss with output to 6.a6osx
+compiling print.ss with output to print.a6osx
+compiling newhash.ss with output to newhash.a6osx
+compiling format.ss with output to format.a6osx
+compiling date.ss with output to date.a6osx
+compiling 7.ss with output to 7.a6osx
+compiling cafe.ss with output to cafe.a6osx
+compiling trace.ss with output to trace.a6osx
+compiling engine.ss with output to engine.a6osx
+compiling interpret.ss with output to interpret.a6osx
+compiling cprep.ss with output to cprep.a6osx
+compiling cpcheck.ss with output to cpcheck.a6osx
+compiling cp0.ss with output to cp0.a6osx
+compiling cpvalid.ss with output to cpvalid.a6osx
+compiling cpcommonize.ss with output to cpcommonize.a6osx
+compiling cpletrec.ss with output to cpletrec.a6osx
+compiling inspect.ss with output to inspect.a6osx
+compiling enum.ss with output to enum.a6osx
+compiling io.ss with output to io.a6osx
+compiling read.ss with output to read.a6osx
+compiling primvars.ss with output to primvars.a6osx
+compiling syntax.ss with output to syntax.a6osx
+compiling costctr.ss with output to costctr.a6osx
+compiling expeditor.ss with output to expeditor.a6osx
+compiling exceptions.ss with output to exceptions.a6osx
+compiling pretty.ss with output to pretty.a6osx
+compiling env.ss with output to env.a6osx
+compiling fasl.ss with output to fasl.a6osx
+compiling reloc.ss with output to reloc.a6osx
+compiling pdhtml.ss with output to pdhtml.a6osx
+compiling strip.ss with output to strip.a6osx
+compiling ftype.ss with output to ftype.a6osx
+compiling back.ss with output to back.a6osx
+compiling cpnanopass.ss with output to cpnanopass.a6osx
+compiling compile.ss with output to compile.a6osx
+compiling cback.ss with output to cback.a6osx
+(time (for-each (lambda (...) ...) ...))
+    485 collections
+    11.425413465s elapsed cpu time, including 4.198574682s collecting
+    11.643308000s elapsed real time, including 4.246367000s collecting
+    7641952992 bytes allocated, including 7639862144 bytes reclaimed
+echo '(reset-handler abort)'\
+             '(base-exception-handler (lambda (c) (fresh-line) (display-condition c) (newline) (reset)))'\
+             '(keyboard-interrupt-handler (lambda () (display "interrupted---aborting\n") (reset)))'\
+             '(optimize-level 3)'\
+             '(debug-level 0)'\
+             '(commonization-level (commonization-level))'\
+             '(compile-compressed #t)'\
+             '(compress-format (compress-format))'\
+             '(compress-level (compress-level))'\
+             '(generate-inspector-information #f)'\
+             '(subset-mode (quote system))'\
+             '(compile-file "mkheader.ss" "mkheader.so")'\
+             | ../bin/a6osx/scheme -q cmacros.so priminfo.so primvars.so env.so
+compiling mkheader.ss with output to mkheader.so
+(if [ -r ../boot/a6osx/scheme.h ]; then mv -f ../boot/a6osx/scheme.h ../boot/a6osx/scheme.h.bak; fi)
+echo '(reset-handler abort)'\
+             '(mkscheme.h "../boot/a6osx/scheme.h" (quote a6osx))' |\
+         ../bin/a6osx/scheme -q cmacros.so priminfo.so primvars.so env.so setup.so mkheader.so
+(if `cmp -s ../boot/a6osx/scheme.h ../boot/a6osx/scheme.h.bak`;\
+          then mv -f ../boot/a6osx/scheme.h.bak ../boot/a6osx/scheme.h;\
+          else rm -f ../boot/a6osx/scheme.h.bak; fi)
+(if [ -r ../boot/a6osx/equates.h ]; then mv -f ../boot/a6osx/equates.h ../boot/a6osx/equates.h.bak; fi)
+echo '(reset-handler abort)'\
+             '(mkequates.h "../boot/a6osx/equates.h")' |\
+         ../bin/a6osx/scheme -q cmacros.so priminfo.so primvars.so env.so setup.so mkheader.so
+(if `cmp -s ../boot/a6osx/equates.h ../boot/a6osx/equates.h.bak`;\
+          then mv -f ../boot/a6osx/equates.h.bak ../boot/a6osx/equates.h;\
+          else rm -f ../boot/a6osx/equates.h.bak; fi)
+error: unknown option `exclude=*'
+usage: git describe [<options>] [<commit-ish>...]
+   or: git describe [<options>] --dirty
+
+    --contains            find the tag that comes after the commit
+    --debug               debug search strategy on stderr
+    --all                 use any ref
+    --tags                use any tag, even unannotated
+    --long                always use long format
+    --first-parent        only follow first parent
+    --abbrev[=<n>]        use <n> digits to display SHA-1s
+    --exact-match         only output exact matches
+    --candidates <n>      consider <n> most recent tags (default: 10)
+    --match <pattern>     only consider tags matching <pattern>
+    --always              show abbreviated commit object as fallback
+    --dirty[=<mark>]      append <mark> on dirty working tree (default: "-dirty")
+
+fine
+/Library/Developer/CommandLineTools/usr/bin/make restoreboot
+mv -f ../boot/a6osx/sbb ../boot/a6osx/petite.boot
+mv -f ../boot/a6osx/scb ../boot/a6osx/scheme.boot
+/Library/Developer/CommandLineTools/usr/bin/make resetbootlinks
+touch bootstrap
+lhtin@mrtime ~/P/ChezScheme> 
