@@ -588,6 +588,7 @@ long S_glzseek(glzFile glz, long offset, INT whence) {
   }
 }
 
+//// 从被压缩的文件流中获取解压后的一个字符
 INT S_glzgetc(glzFile glz) {
   switch (glz->format) {
     case COMPRESS_GZIP:

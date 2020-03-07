@@ -471,12 +471,14 @@ static IBOOL next_path(path, name, ext, sp, dsp) char *path; const char *name, *
   char *p;
   const char *s, *t;
 
+  //// 给p增加一个字符
 #define setp(c) if (p >= path + PATH_MAX) { fprintf(stderr, "search path entry too long\n"); S_abnormal_exit(); } else *p++ = (c)
   for (;;) {
     s = *sp;
     p = path;
   /* copy first searchpath entry into path, substituting MACHINE_TYPE for %m,
    * VERSION for %v, % for %%, and : (; windows) for %: (%; windows) */
+  //// 复制搜索路径中的第一个路径到path，将%m替换为a6osx，%v替换为9.5.3，将%%替换为%，将%:替换为:
     while (*s != 0 && *s != SEARCHPATHSEP) {
       switch (*s) {
         case '%':
@@ -530,6 +532,7 @@ static IBOOL next_path(path, name, ext, sp, dsp) char *path; const char *name, *
   /* unless entry was null, append name and ext onto path and return true with
    * updated path, sp, and possibly dsp */
     if (s != *sp) {
+      //// 如果第一个路径不是/结尾，则加上/
       if ((p > path) && !DIRMARKERP(*(p - 1))) { setp(PATHSEP); }
       t = name;
       while (*t != 0) setp(*t++);
@@ -543,9 +546,11 @@ static IBOOL next_path(path, name, ext, sp, dsp) char *path; const char *name, *
   /* if current segment is empty, move to next segment.  if next segment
    * is empty, return false */
     if (*s == 0) {
+      //// 给定的路径和默认的路径都没有时返回错误
       if (*(*sp = *dsp) == 0) return 0;
       *dsp = "";
     } else {
+      //// 配置的路径第一个是:的情况，跳过进入后面的路径搜索
       *sp = s + 1;
     }
   }
@@ -663,6 +668,7 @@ static IBOOL find_boot(name, ext, fd, errorp) const char *name, *ext; int fd; IB
 
     path = pathbuf;
     for (;;) {
+      //// 根据boot路径和名称得到完整boot文件的路径
       if (!next_path(pathbuf, name, ext, &sp, &dsp)) {
         if (errorp) {
           fprintf(stderr, "cannot find compatible boot file %s%s in search path:\n  \"%s%s\"\n",
@@ -693,6 +699,7 @@ static IBOOL find_boot(name, ext, fd, errorp) const char *name, *ext; int fd; IB
       if (verbose) fprintf(stderr, "trying %s...opened\n", path);
 
      /* check for magic number */
+     //// 检查boot文件开头的字符是否为预设字符
       if (S_glzgetc(file) != fasl_type_header ||
           S_glzgetc(file) != 0 ||
           S_glzgetc(file) != 0 ||
@@ -768,7 +775,7 @@ static IBOOL find_boot(name, ext, fd, errorp) const char *name, *ext; int fd; IB
           S_glzclose(file);
           S_abnormal_exit();
         }
-        //// 递归获取.boot文件
+        //// 获取当前boot文件依赖的boot文件
         if (find_boot(buf, ".boot", -1, 0)) break;
         if ((c = S_glzgetc(file)) == ')') {
           char *sep; char *wastebuf[8];
@@ -813,16 +820,19 @@ static IBOOL find_boot(name, ext, fd, errorp) const char *name, *ext; int fd; IB
   return 1;
 }
 
+//// 从文件流中获取一个完整的数据，数据以1字节为一段，如果该字节最后一位为1表示数据还没有结束
+//// 例如：1000 0001 1000 1000 => 100 0000 100 0100 第一个字节前七位连接上第二个字节前七位
 static uptr zget_uptr(glzFile file, uptr *pn) {
   uptr n, m; int c; octet k;
 
   if ((c = S_glzgetc(file)) < 0) return -1;
   k = (octet)c;
-  n = k >> 1;
+  n = k >> 1; //// 有效数据为k的前7为，最后一位表示是否还有更多数据
   while (k & 1) {
     if ((c = S_glzgetc(file)) < 0) return -1;
     k = (octet)c;
     m = n << 7;
+    //// 这个判断用于检查m是否溢出来了
     if (m >> 7 != n) return -1;
     n = m | (k >> 1);
   }
@@ -830,6 +840,7 @@ static uptr zget_uptr(glzFile file, uptr *pn) {
   return 0;
 }
 
+//// (boot1 boot2 boot3) 依次获取boot文件名称
 static INT zgetstr(file, s, max) glzFile file; char *s; iptr max; {
   ICHAR c;
 
@@ -1003,7 +1014,7 @@ extern void Sscheme_init(abnormal_exit) void (*abnormal_exit) PROTO((void)); {
     Sschemeheapdirs = "";
     if ((Sdefaultheapdirs = get_defaultheapdirs()) == (char *)0) Sdefaultheapdirs = "";
   } else if (*Sschemeheapdirs != 0 && Sschemeheapdirs[strlen(Sschemeheapdirs)-1] == SEARCHPATHSEP) {
-      // ":"结尾，需要增加default boot dir用于搜索boot文件
+      // 如果给的boot文件目录为":"结尾时，说明需要增加default boot dir用于搜索boot文件
       if ((Sdefaultheapdirs = get_defaultheapdirs()) == (char *)0) Sdefaultheapdirs = "";
   } else {
       Sdefaultheapdirs = "";
@@ -1102,7 +1113,7 @@ extern void Sbuild_heap(kernel, custom_init) const char *kernel; void (*custom_i
       }
     }
 #endif
-
+    //// 寻找到所有的boot文件
     if (!find_boot(name, ".boot", -1, 0)) {
       fprintf(stderr, "cannot find compatible %s.boot in search path\n  \"%s%s\"\n",
               name,

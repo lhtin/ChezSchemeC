@@ -107,6 +107,7 @@ wchar_t *S_malloc_wide_pathname(const char *inpath) {
 }
 #endif
 
+//// inpath是相对路径或者绝对路径
 IBOOL S_fixedpathp(inpath) const char *inpath; {
   char c; IBOOL res; char *path;
 
